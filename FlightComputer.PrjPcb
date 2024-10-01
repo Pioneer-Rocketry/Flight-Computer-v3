@@ -172,7 +172,7 @@ GenerateClassCluster=0
 DocumentUniqueId=GXGSMNAB
 
 [Document8]
-DocumentPath=Servos.SchDoc
+DocumentPath=Misc Controls.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=700
 AnnotationIndexControlEnabled=1
