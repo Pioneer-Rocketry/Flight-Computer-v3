@@ -59,7 +59,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=5
+AnnotateOrder=9
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -104,23 +104,6 @@ GenerateClassCluster=0
 DocumentUniqueId=OCQZSQAV
 
 [Document4]
-DocumentPath=GPS.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=300
-AnnotationIndexControlEnabled=1
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=2
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=UNXDZKRJ
-
-[Document5]
 DocumentPath=Telemetry.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=400
@@ -137,7 +120,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HAYDKSSY
 
-[Document6]
+[Document5]
 DocumentPath=MCU IO.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=500
@@ -154,10 +137,27 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VQSDYBLF
 
-[Document7]
+[Document6]
 DocumentPath=Ignitions.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=600
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=5
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=GXGSMNAB
+
+[Document7]
+DocumentPath=Misc Controls.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=700
 AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
@@ -169,33 +169,16 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=GXGSMNAB
-
-[Document8]
-DocumentPath=Misc Controls.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=700
-AnnotationIndexControlEnabled=1
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=7
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
 DocumentUniqueId=OATTIBVT
 
-[Document9]
+[Document8]
 DocumentPath=Outputs.SchDoc
 AnnotationEnabled=1
-AnnotateStartValue=1
+AnnotateStartValue=800
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=7
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
