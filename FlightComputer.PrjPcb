@@ -104,7 +104,7 @@ GenerateClassCluster=0
 DocumentUniqueId=OCQZSQAV
 
 [Document4]
-DocumentPath=Telemetry.SchDoc
+DocumentPath=Radio.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=400
 AnnotationIndexControlEnabled=1
@@ -121,7 +121,7 @@ GenerateClassCluster=0
 DocumentUniqueId=HAYDKSSY
 
 [Document5]
-DocumentPath=MCU IO.SchDoc
+DocumentPath=MCU.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=500
 AnnotationIndexControlEnabled=1
@@ -138,7 +138,7 @@ GenerateClassCluster=0
 DocumentUniqueId=VQSDYBLF
 
 [Document6]
-DocumentPath=Ignitions.SchDoc
+DocumentPath=Pyro.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=600
 AnnotationIndexControlEnabled=1
@@ -172,7 +172,7 @@ GenerateClassCluster=0
 DocumentUniqueId=OATTIBVT
 
 [Document8]
-DocumentPath=Outputs.SchDoc
+DocumentPath=IO.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=800
 AnnotationIndexControlEnabled=0
