@@ -106,6 +106,23 @@ DocumentUniqueId=OCQZSQAV
 [Document4]
 DocumentPath=Radio.SchDoc
 AnnotationEnabled=1
+AnnotateStartValue=300
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=2
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=HAYDKSSY
+
+[Document5]
+DocumentPath=MCU.SchDoc
+AnnotationEnabled=1
 AnnotateStartValue=400
 AnnotationIndexControlEnabled=1
 AnnotateSuffix=
@@ -118,10 +135,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=HAYDKSSY
+DocumentUniqueId=VQSDYBLF
 
-[Document5]
-DocumentPath=MCU.SchDoc
+[Document6]
+DocumentPath=Pyro.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=500
 AnnotationIndexControlEnabled=1
@@ -135,10 +152,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=VQSDYBLF
+DocumentUniqueId=GXGSMNAB
 
-[Document6]
-DocumentPath=Pyro.SchDoc
+[Document7]
+DocumentPath=Misc Controls.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=600
 AnnotationIndexControlEnabled=1
@@ -152,33 +169,16 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=GXGSMNAB
-
-[Document7]
-DocumentPath=Misc Controls.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=700
-AnnotationIndexControlEnabled=1
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=6
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
 DocumentUniqueId=OATTIBVT
 
 [Document8]
 DocumentPath=IO.SchDoc
 AnnotationEnabled=1
-AnnotateStartValue=800
-AnnotationIndexControlEnabled=0
+AnnotateStartValue=700
+AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=7
+AnnotateOrder=8
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
