@@ -104,26 +104,9 @@ GenerateClassCluster=0
 DocumentUniqueId=OCQZSQAV
 
 [Document4]
-DocumentPath=Radio.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=300
-AnnotationIndexControlEnabled=1
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=2
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=HAYDKSSY
-
-[Document5]
 DocumentPath=MCU.SchDoc
 AnnotationEnabled=1
-AnnotateStartValue=400
+AnnotateStartValue=300
 AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
@@ -137,10 +120,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VQSDYBLF
 
-[Document6]
+[Document5]
 DocumentPath=Pyro.SchDoc
 AnnotationEnabled=1
-AnnotateStartValue=500
+AnnotateStartValue=400
 AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
@@ -154,10 +137,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GXGSMNAB
 
-[Document7]
+[Document6]
 DocumentPath=Misc Controls.SchDoc
 AnnotationEnabled=1
-AnnotateStartValue=600
+AnnotateStartValue=500
 AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
@@ -171,10 +154,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OATTIBVT
 
-[Document8]
+[Document7]
 DocumentPath=IO.SchDoc
 AnnotationEnabled=1
-AnnotateStartValue=700
+AnnotateStartValue=600
 AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
@@ -188,7 +171,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FBQEEAKM
 
-[Document9]
+[Document8]
 DocumentPath=PCB1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -205,7 +188,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BICGXXWW
 
-[Document10]
+[Document9]
 DocumentPath=Test_Points.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -222,7 +205,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CMAJASYB
 
-[Document11]
+[Document10]
 DocumentPath=Test_Points.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
