@@ -20,7 +20,7 @@
 - MicroSD Card
 - I2C, SPI Breakout
 - 6 Servos
-- Lora SX1262 Radio
+- Lora SX1262 Radio as Breakout Boards
 
 ## Software
 - 3 Dof Kalman Filter for Position Estimation
