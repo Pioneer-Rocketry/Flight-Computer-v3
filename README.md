@@ -62,10 +62,11 @@ Also note that standard orientation solving doesn't work while the rocket is acc
 
 ### Standards
 - Classes should use `UpperCamelCase` capitalization
-- Functions should use `lowerCamelCase` capitalization
 - Variables should use `lowerCamelCase` capitalization
-- Constants should use `CAPS_LOCK_SNAKE_CASE` capitalization
 - Variables should be short and descriptive
     - example: posX
+- Constants should use `CAPS_LOCK_SNAKE_CASE` capitalization
+- Functions should use `lowerCamelCase` capitalization
+- Functions should try and use early return if possible to prevent nested if statements
 - Functions should have docstrings saying what each variable is, and what the output is.
 - All git commits should have a message that talks about what was changed
