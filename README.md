@@ -17,7 +17,6 @@
 - 5 Pyro Channels
 - 2 Switch 5v Rails
 - 2 Switch Battery Rails
-- H-Bridge Motor Driver
 - MicroSD Card
 - I2C, SPI Breakout
 - 6 Servos
