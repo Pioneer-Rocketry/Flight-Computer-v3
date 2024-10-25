@@ -59,13 +59,13 @@ The state machine can fo from Coasting up to Accelerating if its a multistage ro
 Also note that standard orientation solving doesn't work while the rocket is accelerating, where we will have to use intergration of angular velocity.
 
 
-### Standards
-- Classes should use `UpperCamelCase` capitalization
-- Variables should use `lowerCamelCase` capitalization
+### Standards/Style
+- Classes should use `camelCase` capitalization
+- Variables should use `camelCase` capitalization
 - Variables should be short and descriptive
     - example: posX
 - Constants should use `CAPS_LOCK_SNAKE_CASE` capitalization
-- Functions should use `lowerCamelCase` capitalization
+- Functions should use `camelCase` capitalization
 - Functions should try and use early return if possible to prevent nested if statements
 - Functions should have docstrings saying what each variable is, and what the output is.
 - All git commits should have a message that talks about what was changed
