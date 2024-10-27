@@ -69,3 +69,14 @@ Also note that standard orientation solving doesn't work while the rocket is acc
 - Functions should try and use early return if possible to prevent nested if statements
 - Functions should have docstrings saying what each variable is, and what the output is.
 - All git commits should have a message that talks about what was changed
+
+### Testing
+
+#### Hardware-in-the-loop Testing (HILT)
+HILT uses "fake" sensor readings to simulate a flight.
+This is done by plugging it into a computer, and sending it data via USB/Serial, and having it pretend like its flying
+
+#### Flight Tests
+Flights are going to start out basic by just trying to quantify where the rocket is, and how fast. As well as testing state transitions. \
+After every successful flight we can add more features like testing parachute deployment, then 2nd stage deployment ignition, then control. \
+We also need to test it in high Speed and high G flights.
