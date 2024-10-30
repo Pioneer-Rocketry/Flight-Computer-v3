@@ -80,3 +80,11 @@ This is done by plugging it into a computer, and sending it data via USB/Serial,
 Flights are going to start out basic by just trying to quantify where the rocket is, and how fast. As well as testing state transitions. \
 After every successful flight we can add more features like testing parachute deployment, then 2nd stage deployment ignition, then control. \
 We also need to test it in high Speed and high G flights.
+
+
+### AHRS and Position Estimation
+Attitude and Heading Reference System (AHRS) On the ground and after motor burnout we can use either Mahony filter or Madgwick filters. While the motor is buring we can use either of the filters without the accelerometer correction
+
+Position Estimation uses an Async Kalman Filter. \
+Then taking accelerometer reading from both IMU, and rotates them based on the Attitude from the AHRS system.
+The Kalman Filter finds the best estimation of the position using the accelerometer readings, and GPS readings.
