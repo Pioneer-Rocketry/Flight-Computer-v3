@@ -83,7 +83,8 @@ We also need to test it in high Speed and high G flights.
 
 
 ### AHRS and Position Estimation
-Attitude and Heading Reference System (AHRS) On the ground and after motor burnout we can use either Mahony filter or Madgwick filters. While the motor is buring we can use either of the filters without the accelerometer correction
+Attitude and Heading Reference System (AHRS) On the ground and after motor burnout we can use either Mahony filter or Madgwick filters. While the motor is buring we can use either of the filters without the accelerometer correction. Can also just intergrate angular velocity to get the Attitude.\
+We should use a Quaterinion to represent the Attitude.
 
 Position Estimation uses an Async Kalman Filter. \
 Then taking accelerometer reading from both IMU, and rotates them based on the Attitude from the AHRS system.
