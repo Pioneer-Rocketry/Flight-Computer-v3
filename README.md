@@ -54,6 +54,8 @@ With states that include:
 - Descending under Main Chute
 - Landed
 
+[comment]: <> (Drawing made in PlantULM https://plantuml.com)
+
 The state machine can fo from Coasting up to Accelerating if its a multistage rocket. It can also skip states incase of any failures.
 
 Also note that standard orientation solving doesn't work while the rocket is accelerating, where we will have to use intergration of angular velocity.
