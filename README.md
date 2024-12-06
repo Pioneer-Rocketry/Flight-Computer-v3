@@ -54,8 +54,11 @@ With states that include:
 - Descending under Main Chute
 - Landed
 
+![](https://www.plantuml.com/plantuml/png/PP6zZXiX4CTxdcBgIASexHRHNJxIv2n5IReenHZ6kyWiMCDGE4-VdGKZjDTuuF_nyw1zpe8iPGtcpxk_yFJq4Jwb93xEfasOuDSz2wsx0ULckhE5FozahzdKqPDDRRBcNfF5uF-XWeVp1Dynh1ZXcmz2t6FYKpHZK1all98p--y4NmDPuHIzpO1CrGIC3fZGtK4INCBTrFZUjfO2CUvl6oyJ_5u8EDah2VYDDdZlDuRcUw6_Es7UIO_31ASaYM713EV2aHoa8hgGCidBGWnPS5R0bhEjfulYBSr4fhEEwnwScgvZWXTvA4tIp1VAbgBJRZ--UUW5Gr3c6UrLro1aMSnGs4cSoam7yOG-7gHNZ8wSgV49VlP_APlE80ir5Fn0HhiK8TFIdLYl0qtLmzO3JzsHflUXNCTOru_JtCSNsHeV836iYGbko9BDCqLNrl0V)
+
 [comment]: <> (Drawing made in PlantULM https://plantuml.com)
 
+<div hidden>
 @startuml
 
 [*] --> Booting
@@ -97,6 +100,7 @@ Main -> Landed
 Landed: The rocket has Landed either in 1 or more parts
 
 @enduml
+</div>
 
 The state machine can fo from Coasting up to Accelerating if its a multistage rocket. It can also skip states incase of any failures.
 
