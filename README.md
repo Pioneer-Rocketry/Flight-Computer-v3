@@ -56,6 +56,48 @@ With states that include:
 
 [comment]: <> (Drawing made in PlantULM https://plantuml.com)
 
+@startuml
+
+[*] --> Booting
+Booting : System Boot up
+
+Booting -> Checks
+Checks: System Checks
+
+Checks -> Localizaing
+Localizaing: Kalman Filter Localization
+
+Localizaing -> Armed
+Armed: Electronics are Armed and ready to fly
+
+Armed -> Accelerating
+Accelerating: The rocket is accelerating/flying
+
+Accelerating -> Coasting
+Coasting: Motor has burned out and is either staging or coasting to apogee
+
+Coasting -> Accelerating
+
+Coasting -> Apogee
+Apogee: At Apogee
+
+Apogee -> Descending
+Descending: The rocket is falling back to earth
+
+Descending -> Drouge
+Descending -> Main
+Descending -> Landed
+Drouge: Rocket is under the Drouge Parachute
+
+Drouge -> Main
+Drouge -> Landed
+Main: The rocket is under the Main Parachute
+
+Main -> Landed
+Landed: The rocket has Landed either in 1 or more parts
+
+@enduml
+
 The state machine can fo from Coasting up to Accelerating if its a multistage rocket. It can also skip states incase of any failures.
 
 Also note that standard orientation solving doesn't work while the rocket is accelerating, where we will have to use intergration of angular velocity.
