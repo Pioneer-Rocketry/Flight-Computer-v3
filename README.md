@@ -27,6 +27,7 @@
 - Live Telemetery
 - *Active Control* (Long term project to keep rocket pointing up)
 - Staging Logic/Inflight Events
+- Software will be written in c++ using [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
 
 ### Software Flow States
 - Boot and Inital System Check
