@@ -60,7 +60,7 @@ With states that include:
 [comment]: <> (Drawing made in PlantULM https://plantuml.com)
 
 <div hidden>
-@startuml
+<!-- @startuml
 scale 600 width
 [*] --> PreLaunch
 
@@ -113,7 +113,7 @@ state Ground {
 }
 Ground: The rocket has landed
 
-@enduml
+@enduml -->
 </div>
 
 The state machine can fo from Coasting up to Accelerating if its a multistage rocket. It can also skip states incase of any failures.
