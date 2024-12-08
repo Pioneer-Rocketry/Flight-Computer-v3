@@ -54,50 +54,63 @@ With states that include:
 - Descending under Main Chute
 - Landed
 
-![](https://www.plantuml.com/plantuml/png/PP6zZXiX4CTxdcBgIASexHRHNJxIv2n5IReenHZ6kyWiMCDGE4-VdGKZjDTuuF_nyw1zpe8iPGtcpxk_yFJq4Jwb93xEfasOuDSz2wsx0ULckhE5FozahzdKqPDDRRBcNfF5uF-XWeVp1Dynh1ZXcmz2t6FYKpHZK1all98p--y4NmDPuHIzpO1CrGIC3fZGtK4INCBTrFZUjfO2CUvl6oyJ_5u8EDah2VYDDdZlDuRcUw6_Es7UIO_31ASaYM713EV2aHoa8hgGCidBGWnPS5R0bhEjfulYBSr4fhEEwnwScgvZWXTvA4tIp1VAbgBJRZ--UUW5Gr3c6UrLro1aMSnGs4cSoam7yOG-7gHNZ8wSgV49VlP_APlE80ir5Fn0HhiK8TFIdLYl0qtLmzO3JzsHflUXNCTOru_JtCSNsHeV836iYGbko9BDCqLNrl0V)
+![](https://www.plantuml.com/plantuml/png/TP9FRzGm4CNlyodU6QcY9muve9O_vK0hLVmv8GvJUvf4wxLNpWIqe7vt73knN0ANjUVDUp-l9xwQbAFEHqUJOITuTNc9dwFLWRwz-8wBYzUuZtBBipS3KVAge0huJS1cUnE24lBIuVDvKZdc0bzFjEhPztOGSvW8wwPwSsacgXqaysqmxCPVe-y9JT7X8xiZUzoCJYLk7TOnU7hcp4TUnwDOGbdhWUDK1B2tYCBs30ruT6VQh4ZP6pVsWwB3jJ7Y9EOpyFw7UAKdggFey2cOW-X2xKLrERfbRhDRSUtWAhZSiYqxV1a4iPAvwRrCr2NnLwJCEF1KS7NRuIveY1XumiCSlLY4MVFT4rX67IHYKkuNHlAPDGSDu5FeHHhOxdyZuMUdumAGTHIq2soOiaaZrKshOZQ-ayc8j_a2jTXFuv6TMzWFR0xG0E6e0psB55mC_Inx_Ov7lrS_n31xIrXZtRhYdYEROLP9WPCBPx5KJHNNA9L4oAqk__uBK_fDuedACsaVrVQropCgnloCRjbRiUriyZTsMKweOlrV_qgydO_k3m00)
 
 [comment]: <> (Drawing made in PlantULM https://plantuml.com)
 
 <div hidden>
 @startuml
+scale 600 width
+[*] --> PreLaunch
 
-[*] --> Booting
-Booting : System Boot up
+state PreLaunch {
+  [*] --> Boot
+  Boot: System Boot Up
 
-Booting -> Checks
-Checks: System Checks
+  Boot --> Checks
+  Checks: System Checkcs
 
-Checks -> Localizaing
-Localizaing: Kalman Filter Localization
+  Checks -> Localizing
+  Localizing: Kalman Filter Localization
 
-Localizaing -> Armed
-Armed: Electronics are Armed and ready to fly
+  Localizing --> Armed
+  Armed: System is Armed and ready to fly
 
-Armed -> Accelerating
-Accelerating: The rocket is accelerating/flying
+  Armed -> Flight : Acceleration Event
+}
+PreLaunch: Rocket is getting ready to fly
 
-Accelerating -> Coasting
-Coasting: Motor has burned out and is either staging or coasting to apogee
+state Flight {
+  [*] --> Accelerating
+  Accelerating: The rocket is accelerating/flying
 
-Coasting -> Accelerating
+  Accelerating --> Coasting
+  Coasting: Motor has burned out and is either staging or coasting to apogee
+  Coasting --> Accelerating : Multistage Rocket
 
-Coasting -> Apogee
-Apogee: At Apogee
+  Coasting --> Apogee
+  Apogee: At Apogee
 
-Apogee -> Descending
-Descending: The rocket is falling back to earth
+  Apogee --> Descending
+  Descending: The rocket is falling back to earth
 
-Descending -> Drouge
-Descending -> Main
-Descending -> Landed
-Drouge: Rocket is under the Drouge Parachute
+  Descending --> Drogue
+  Descending --> Main
+  Descending --> Ground
+  Drogue: Drogue Parachute Deployed
 
-Drouge -> Main
-Drouge -> Landed
-Main: The rocket is under the Main Parachute
+  Drogue --> Main
+  Drogue -> Ground
 
-Main -> Landed
-Landed: The rocket has Landed either in 1 or more parts
+  Main: Main Parachute Deployed
+  Main -> Ground
+}
+Flight: Rocket is flying
+
+state Ground {
+  Landed: The rocket has landed
+}
+Ground: The rocket has landed
 
 @enduml
 </div>
@@ -114,7 +127,6 @@ Also note that standard orientation solving doesn't work while the rocket is acc
     - example: posX
 - Constants should use `CAPS_LOCK_SNAKE_CASE` capitalization
 - Functions should use `camelCase` capitalization
-- Functions should try and use early return if possible to prevent nested if statements
 - Functions should have docstrings saying what each variable is, and what the output is.
 - All git commits should have a message that talks about what was changed
 
