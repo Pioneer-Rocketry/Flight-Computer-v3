@@ -60,60 +60,60 @@ With states that include:
 [comment]: <> (Drawing made in PlantULM https://plantuml.com)
 
 <div hidden>
-<!-- @startuml
-scale 600 width
-[*] --> PreLaunch
-
-state PreLaunch {
-  [*] --> Boot
-  Boot: System Boot Up
-
-  Boot --> Checks
-  Checks: System Checkcs
-
-  Checks -> Localizing
-  Localizing: Kalman Filter Localization
-
-  Localizing --> Armed
-  Armed: System is Armed and ready to fly
-
-  Armed -> Flight : Acceleration Event
-}
-PreLaunch: Rocket is getting ready to fly
-
-state Flight {
-  [*] --> Accelerating
-  Accelerating: The rocket is accelerating/flying
-
-  Accelerating --> Coasting
-  Coasting: Motor has burned out and is either staging or coasting to apogee
-  Coasting --> Accelerating : Multistage Rocket
-
-  Coasting --> Apogee
-  Apogee: At Apogee
-
-  Apogee --> Descending
-  Descending: The rocket is falling back to earth
-
-  Descending --> Drogue
-  Descending --> Main
-  Descending --> Ground
-  Drogue: Drogue Parachute Deployed
-
-  Drogue --> Main
-  Drogue -> Ground
-
-  Main: Main Parachute Deployed
-  Main -> Ground
-}
-Flight: Rocket is flying
-
-state Ground {
-  Landed: The rocket has landed
-}
-Ground: The rocket has landed
-
-@enduml -->
+[//]: # (@startuml)
+[//]: # (scale 600 width)
+[//]: # ([*] --> PreLaunch)
+[//]: # ()
+[//]: # (state PreLaunch {)
+[//]: # (  [*] --> Boot)
+[//]: # (  Boot: System Boot Up)
+[//]: # ()
+[//]: # (  Boot --> Checks)
+[//]: # (  Checks: System Checkcs)
+[//]: # ()
+[//]: # (  Checks -> Localizing)
+[//]: # (  Localizing: Kalman Filter Localization)
+[//]: # ()
+[//]: # (  Localizing --> Armed)
+[//]: # (  Armed: System is Armed and ready to fly)
+[//]: # ()
+[//]: # (  Armed -> Flight : Acceleration Event)
+[//]: # (})
+[//]: # (PreLaunch: Rocket is getting ready to fly)
+[//]: # ()
+[//]: # (state Flight {)
+[//]: # (  [*] --> Accelerating)
+[//]: # (  Accelerating: The rocket is accelerating/flying)
+[//]: # ()
+[//]: # (  Accelerating --> Coasting)
+[//]: # (  Coasting: Motor has burned out and is either staging or coasting to apogee)
+[//]: # (  Coasting --> Accelerating : Multistage Rocket)
+[//]: # ()
+[//]: # (  Coasting --> Apogee)
+[//]: # (  Apogee: At Apogee)
+[//]: # ()
+[//]: # (  Apogee --> Descending)
+[//]: # (  Descending: The rocket is falling back to earth)
+[//]: # ()
+[//]: # (  Descending --> Drogue)
+[//]: # (  Descending --> Main)
+[//]: # (  Descending --> Ground)
+[//]: # (  Drogue: Drogue Parachute Deployed)
+[//]: # ()
+[//]: # (  Drogue --> Main)
+[//]: # (  Drogue -> Ground)
+[//]: # ()
+[//]: # (  Main: Main Parachute Deployed)
+[//]: # (  Main -> Ground)
+[//]: # (})
+[//]: # (Flight: Rocket is flying)
+[//]: # ()
+[//]: # (state Ground {)
+[//]: # (  Landed: The rocket has landed)
+[//]: # (})
+[//]: # (Ground: The rocket has landed)
+[//]: # ()
+[//]: # (@enduml -->)
 </div>
 
 The state machine can fo from Coasting up to Accelerating if its a multistage rocket. It can also skip states incase of any failures.
