@@ -63,6 +63,13 @@ The state machine can fo from Coasting up to Accelerating if its a multistage ro
 
 Also note that standard orientation solving doesn't work while the rocket is accelerating, where we will have to use intergration of angular velocity.
 
+### Core Processes
+| CM7 | CM4|
+|--|--|
+| Data collection | State Machine |
+| Kalman Filter | Radio |
+|  | Control/Events |
+
 
 ### Standards/Style
 - Classes should use `camelCase` capitalization
