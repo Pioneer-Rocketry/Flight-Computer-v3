@@ -55,9 +55,38 @@ With states that include:
 - Descending under Main Chute
 - Landed
 
-![](https://www.plantuml.com/plantuml/png/RLAxRjmm4Epv5LC7iECoK17OURZ97M3aKGKfrjHQ8euY3-GgmIMuVmz5YZefbqRYpixCWiEzZq91ni6ggCaotjpTuPTffLVVN_t0pSrRF0NUqUXqV_lEUr4g2OGlAFueOEeq-7AAmaCkyEsePZoRlEzP7wB2VAZSKkgebWuIUUSrMVFRk4vXLJJuH7OWXqTZXKFja1Zlr8QPHpw4WLk5yby6cbW0a6iHcDeJnEF5dbIb8caVhUbwkNtGcYq7aicpmQNq3Xz_iXDrLaiG3JvxVM2PHdGiMRCTK98htZcsjN-3hpqZB1QqwhrEyYcDVoGbMKzHIbJrs63lnGVq5F4y1iSj_2ZvnicOZVGS48MwoIFnzAo3UD3HTyoBMSro6yH-j68c0vxlhAu4rQOSKdPIiGNCn0ySDRksNA0MrscyaBMJzpFf0yI3AKYlDf9Y5tmtyZM-9-EkqLsA9Ez8aJNp7qyKIFUZS18ShJybpaBQs1NaugIGMqt-_i-cz5UAiohxiDwUyjfrNmenxqjYbseTJtvcMzpksRNZOFy2)
-[Drawing made in PlantULM](https://www.plantuml.com/plantuml/uml/RLAxRjmm4Epv5LC7iECoK17OURZ97M3aKGKfrjHQ8euY3-GgmIMuVmz5YZefbqRYpixCWiEzZq91ni6ggCaotjpTuPTffLVVN_t0pSrRF0NUqUXqV_lEUr4g2OGlAFueOEeq-7AAmaCkyEsePZoRlEzP7wB2VAZSKkgebWuIUUSrMVFRk4vXLJJuH7OWXqTZXKFja1Zlr8QPHpw4WLk5yby6cbW0a6iHcDeJnEF5dbIb8caVhUbwkNtGcYq7aicpmQNq3Xz_iXDrLaiG3JvxVM2PHdGiMRCTK98htZcsjN-3hpqZB1QqwhrEyYcDVoGbMKzHIbJrs63lnGVq5F4y1iSj_2ZvnicOZVGS48MwoIFnzAo3UD3HTyoBMSro6yH-j68c0vxlhAu4rQOSKdPIiGNCn0ySDRksNA0MrscyaBMJzpFf0yI3AKYlDf9Y5tmtyZM-9-EkqLsA9Ez8aJNp7qyKIFUZS18ShJybpaBQs1NaugIGMqt-_i-cz5UAiohxiDwUyjfrNmenxqjYbseTJtvcMzpksRNZOFy2)
 
+```mermaid
+stateDiagram-v2
+    [*] --> PreLaunch
+
+    state PreLaunch {
+        direction LR
+        [*] --> Boot
+        Boot --> Checks
+        Checks --> Localizing
+        Localizing --> Armed
+    }
+
+    PreLaunch --> Flight
+
+    state Flight {
+        direction LR
+        [*] --> Accelerating
+        Accelerating --> Coasting
+        Coasting --> Accelerating : Multistage Rocket
+        Coasting --> Descending
+        Descending --> Landed
+        Descending --> Drouge
+        Drouge --> Landed
+        Drouge --> Main
+        Main  --> Landed
+    }
+
+    state Landed {
+        [*]
+    }
+```
 
 The state machine can fo from Coasting up to Accelerating if its a multistage rocket. It can also skip states incase of any failures.
 
