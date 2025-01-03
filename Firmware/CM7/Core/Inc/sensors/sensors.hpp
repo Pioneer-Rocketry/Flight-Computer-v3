@@ -29,7 +29,7 @@ class Sensor {
          * @param data The data to be read
          * @param len The number of bytes to read
          */
-        HAL_StatusTypeDef read_I2C(uint8_t reg, uint8_t *data, uint8_t len=1) {
+        HAL_StatusTypeDef read_I2C(uint16_t reg, uint8_t *data, uint16_t len=1) {
             return HAL_I2C_Mem_Read(this->i2cHandler, this->address, reg, I2C_MEMADD_SIZE_8BIT, data, len, HAL_MAX_DELAY);
         }
 
