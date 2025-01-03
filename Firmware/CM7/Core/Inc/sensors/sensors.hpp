@@ -19,9 +19,9 @@ class Sensor {
 
         uint8_t address;
 
+    protected:
         Data *data;
 
-    protected:
         /**
          * Read data from the i2c bus
          * 
@@ -49,12 +49,12 @@ class Sensor {
          * 
          * @return The address of the sensor
          */
-        uint8_t getAddress() {
+        uint8_t get_address() {
             return this->address;
         }
 
     public:
-        virtual void begin() = 0;
+        virtual bool begin() = 0;
         virtual void get_data() = 0;
 
         Sensor(I2C_HandleTypeDef *i2cHandler, uint8_t address, Data *data) {
