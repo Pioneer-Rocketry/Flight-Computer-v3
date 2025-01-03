@@ -100,17 +100,6 @@ Also note that standard orientation solving doesn't work while the rocket is acc
 | Kalman Filter | Radio |
 |  | Control/Events |
 
-
-### Standards/Style
-- Classes should use `camelCase` capitalization
-- Variables should use `camelCase` capitalization
-- Variables should be short and descriptive
-    - example: posX
-- Constants should use `CAPS_LOCK_SNAKE_CASE` capitalization
-- Functions should use `camelCase` capitalization
-- Functions should have docstrings saying what each variable is, and what the output is.
-- All git commits should have a message that talks about what was changed
-
 ### Testing
 
 #### Hardware-in-the-loop Testing (HILT)
