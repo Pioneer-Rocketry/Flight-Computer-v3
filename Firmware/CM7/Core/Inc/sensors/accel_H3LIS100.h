@@ -5,11 +5,10 @@
 #include "sensors/sensors.hpp"
 
 // Addresses
-#define H3LIS100_ADDRESS1   0x18 // Address when SDO/AS0 is 0
-#define H3LIS100_ADDRESS2   0x19 // Address when SDO/AS0 is 1
+#define H3LIS100_ADDRESS    0x18 // Address when SDO/AS0 is 0
 
 // Who Am I ID
-#define H3LIS100_ID         0x32
+#define H3LIS100_ID 0x32
 
 // Register addresses
 #define H3LIS100_WHO_AM_I           0x0F
