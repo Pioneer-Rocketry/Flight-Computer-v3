@@ -62,20 +62,21 @@ stateDiagram-v2
 
     state PreLaunch {
         direction LR
-        [*] --> Boot
-        Boot --> Checks
+        [*] --> Booting
+        Booting --> Checks
         Checks --> Localizing
-        Localizing --> Armed
+        Localizing --> Ready
     }
 
-    PreLaunch --> Flight
+    PreLaunch --> Flight : Armed
 
     state Flight {
         direction LR
         [*] --> Accelerating
-        Accelerating --> Coasting
-        Coasting --> Accelerating : Multistage Rocket
-        Coasting --> Descending
+        Accelerating --> Ascending
+        Accelerating --> Landed
+        Ascending --> Accelerating : Multistage Rocket
+        Ascending --> Descending
         Descending --> Landed
         Descending --> Drouge
         Drouge --> Landed
