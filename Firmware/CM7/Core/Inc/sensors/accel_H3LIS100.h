@@ -36,7 +36,7 @@ class Accel_H3LIS100 : public Sensor {
     private:
 
     public:
-        Accel_H3LIS100(I2C_HandleTypeDef *i2cHandler, Data *data) : Sensor(i2cHandler, address, data) {}
+        Accel_H3LIS100(I2C_HandleTypeDef *i2cHandler, Data *data);
 
         bool begin() override;
         void get_data() override;
