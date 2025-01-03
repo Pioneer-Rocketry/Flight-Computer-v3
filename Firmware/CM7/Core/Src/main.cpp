@@ -149,6 +149,8 @@ int main(void)
 	/* USER CODE BEGIN 2 */
 
 	// Initialize sensors
+	state_machine.update();
+
 	if (!accel_h3lis100.begin()) {
 		while (1);
 	}
@@ -174,44 +176,6 @@ int main(void)
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
-
-		switch (state_machine.update())
-		{
-			case INITIALIZING:
-				break;
-
-			case SYSTEM_CHECKS:
-				break;
-
-			case LOCALIZING:
-				break;
-
-			case READY_FOR_FLIGHT:
-				break;
-
-			case ACCELERATING:
-				break;
-
-			case ASCENDING:
-				break;
-
-			case DESENDING:
-				break;
-
-			case UNDER_DROUGE:
-				break;
-
-			case UNDER_MAIN:
-				break;
-
-			case LANDED:
-				break;
-
-			default:
-				// Error, reset to INITIALIZING
-				state_machine.reset();
-				break;
-		}
 	}
 	/* USER CODE END 3 */
 }
