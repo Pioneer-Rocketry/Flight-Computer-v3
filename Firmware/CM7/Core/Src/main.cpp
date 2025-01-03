@@ -25,6 +25,13 @@
 #include "data.h"
 #include "state_machine.h"
 
+// Sensors
+
+#include "sensors/accel_H3LIS100.h"
+#include "sensors/accel_AIS3624.h"
+#include "sensors/gyro_I3G4250.h"
+#include "sensors/baro_MS5607.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,8 +57,16 @@
 
 /* USER CODE BEGIN PV */
 
+I2C_HandleTypeDef hi2c1;
+
 Data data;
 State_Machine state_machine(&data);
+
+// Define sensors
+Accel_H3LIS100 accel_h3lis100(&hi2c1, &data);
+Accel_AIS3624 accel_ais3624(&hi2c1, &data);
+Gyro_I3G4250 gyro_i3g4250(&hi2c1, &data);
+Baro_MS5607 baro_ms5607(&hi2c1, &data);
 
 /* USER CODE END PV */
 
@@ -132,6 +147,23 @@ int main(void)
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
 	/* USER CODE BEGIN 2 */
+
+	// Initialize sensors
+	if (!accel_h3lis100.begin()) {
+		while (1);
+	}
+
+	if (!accel_ais3624.begin()) {
+		while (1);
+	}
+
+	if (!gyro_i3g4250.begin()) {
+		while (1);
+	}
+
+	if (!baro_ms5607.begin()) {
+		while (1);
+	}
 
 	/* USER CODE END 2 */
 
