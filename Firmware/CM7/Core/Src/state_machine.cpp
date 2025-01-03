@@ -50,6 +50,10 @@ State State_Machine::get_state() {
     return this->state;
 }
 
+void State_Machine::reset() {
+    this->state = INITIALIZING;
+}
+
 void switch_to_system_checks() {
 }
 

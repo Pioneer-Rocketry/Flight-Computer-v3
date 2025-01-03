@@ -41,6 +41,8 @@ class State_Machine {
 
         State update();
         State get_state();
+
+        void reset();
 };
 
 #endif
