@@ -1,0 +1,41 @@
+// Name ${workspaceRoot} folder path names to your project
+// Set paths to arm-none-eabi libraries as it is installed on your system
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath":
+            [
+                "${workspaceRoot}",
+                "${workspaceRoot}/CM4/Core/Inc",
+                "${workspaceRoot}/CM7/Core/Inc",
+                "${workspaceRoot}/Drivers/STM32H7xx_HAL_Driver/Inc",
+                "${workspaceRoot}/Drivers/CMSIS/Include",
+                "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32H7xx/Include"
+            ],
+            "defines":
+            [
+                "USE_HAL_DRIVER",
+                "STM32H745xx"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "browse":
+            {
+                "path":
+                [
+                    "${workspaceRoot}",
+                    "${workspaceRoot}/CM4/Core/Inc",
+                    "${workspaceRoot}/CM7/Core/Inc",
+                    "${workspaceRoot}/Drivers/STM32H7xx_HAL_Driver/Inc",
+                    "${workspaceRoot}/Drivers/CMSIS/Include",
+                    "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32H7xx/Include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceRoot}/.vscode/browse.vc.db"
+            }
+        }
+    ],
+    "version": 4
+}
