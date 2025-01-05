@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build CM4",
+            "group": "build",
+            "type": "shell",
+            "command": [ "make", "-C", "Makefile/CM4" ],
+            "detail": "Build CM4"
+        },
+        {
+            "label": "Clean Build of CM4",
+            "group": "build",
+            "type": "shell",
+            "command": [ "make", "-C", "Makefile/CM4", "clean", "&&", "make", "-C", "Makefile/CM4" ],
+            "detail": "Do a clean build of CM4"
+        },
+        {
+            "label": "Build CM7",
+            "group": "build",
+            "type": "shell",
+            "command": [ "make", "-C", "Makefile/CM7" ],
+            "detail": "Build CM7"
+        },
+        {
+            "label": "Clean Build of CM7",
+            "group": "build",
+            "type": "shell",
+            "command": [ "make", "-C", "Makefile/CM7", "clean", "&&", "make", "-C", "Makefile/CM7" ],
+            "detail": "Do a clean build of CM7"
+        }
+    ]
+}
+  
