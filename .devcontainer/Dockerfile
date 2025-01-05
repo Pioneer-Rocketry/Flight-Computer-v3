@@ -31,9 +31,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         clang-format \
         openocd \
         # ^^ needed for uploading and debugging
+        gcc-arm-none-eabi \
        expect \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-# ------------------ Instlal CMAKE ------------------
+# ------------------ Install CMAKE ------------------
 ARG REINSTALL_CMAKE_VERSION_FROM_SOURCE="3.22.2"
 
 # Optionally install the cmake for vcpkg

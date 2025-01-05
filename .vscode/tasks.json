@@ -28,6 +28,20 @@
             "type": "shell",
             "command": [ "make", "-C", "Makefile/CM7", "clean", "&&", "make", "-C", "Makefile/CM7" ],
             "detail": "Do a clean build of CM7"
+        },
+        {
+            "label": "Build All",
+            "group": "build",
+            "type": "shell",
+            "command": [ "make", "-C", "Makefile/CM4", "&&", "make", "-C", "Makefile/CM7" ],
+            "detail": "Build CM4 and CM7"
+        },
+        {
+            "label": "Clean All",
+            "group": "build",
+            "type": "shell",
+            "command": [ "make", "-C", "Makefile/CM4", "clean", "&&", "make", "-C", "Makefile/CM7", "clean" ],
+            "detail": "Do a clean build of CM4 and CM7"
         }
     ]
 }
