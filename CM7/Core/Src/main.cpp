@@ -151,23 +151,21 @@ int main(void)
 	/* USER CODE BEGIN 2 */
 
 	// Initialize sensors
-	// state_machine.update();
+	if (!accel_h3lis100.begin()) {
+		while (1);
+	}
 
-	// if (!accel_h3lis100.begin()) {
-	// 	while (1);
-	// }
+	if (!accel_ais3624.begin()) {
+		while (1);
+	}
 
-	// if (!accel_ais3624.begin()) {
-	// 	while (1);
-	// }
+	if (!gyro_i3g4250.begin()) {
+		while (1);
+	}
 
-	// if (!gyro_i3g4250.begin()) {
-	// 	while (1);
-	// }
-
-	// if (!baro_ms5607.begin()) {
-	// 	while (1);
-	// }
+	if (!baro_ms5607.begin()) {
+		while (1);
+	}
 
 	/* USER CODE END 2 */
 
