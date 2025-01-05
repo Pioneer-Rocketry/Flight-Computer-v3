@@ -4,4 +4,5 @@
 .vscode/launch.json
 .vscode/ipch
 
-Firmware/*/Debug
+Makefile/CM4/build/
+Makefile/CM7/build/
