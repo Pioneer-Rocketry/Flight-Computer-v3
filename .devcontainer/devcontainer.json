@@ -5,11 +5,11 @@
 	"runArgs": [
 		"--privileged"
 	],
-	"image": "hamedjafarzadeh/stm32-dev-container:cube1.14",
+	// "image": "hamedjafarzadeh/stm32-dev-container:cube1.14",
 	// if you want to customize and build yourself, comment the line above and uncomment line below
-	// "build": {
-	//   "dockerfile": "Dockerfile"
-	// },
+	"build": {
+	  "dockerfile": "Dockerfile"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [

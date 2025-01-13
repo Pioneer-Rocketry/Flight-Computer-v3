@@ -1,7 +1,4 @@
 {
-    "files.associations": {
-        "main.h": "c",
-        "stm32f4xx_hal.h": "c",
-        "stm32f4xx_hal_conf.h": "c"
-    }
+    "cortex-debug.gdbPath": "/usr/bin/gdb-multiarch",
+    "stm32-for-vscode.openOCDPath": false
 }
