@@ -105,3 +105,8 @@ We should use a Quaterinion to represent the Attitude.
 Position Estimation uses an Async Kalman Filter. \
 Then taking accelerometer reading from both IMU, and rotates them based on the Attitude from the AHRS system.
 The Kalman Filter finds the best estimation of the position using the accelerometer readings, and GPS readings.
+
+##### New Idea
+
+I think we can get away with using a basic Complementary Filter while on the ground, but once we launch we switch to just intergrating angular velocity.\
+But we need a accurate measurement of the Gyro Bias, and Gyro Drift
