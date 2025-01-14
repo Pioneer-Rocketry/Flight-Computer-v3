@@ -109,4 +109,6 @@ The Kalman Filter finds the best estimation of the position using the accelerome
 ##### New Idea
 
 I think we can get away with using a basic Complementary Filter while on the ground, but once we launch we switch to just intergrating angular velocity.\
-But we need a accurate measurement of the Gyro Bias, and Gyro Drift
+But we need a accurate measurement of the Gyro Bias, and Gyro Drift 
+
+Then you can rotate the accelerometer readings by the attitude, and integrate them to get the position (up until apogee).
