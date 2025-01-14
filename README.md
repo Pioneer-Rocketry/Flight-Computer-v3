@@ -42,20 +42,6 @@
 
 ### State Machine/Flow
 The software will be a (mostly) linear state machine.
-With states that include:
-- Booting
-- System Checks
-- Localizing
-- Armed
-- Accelerating
-- Coasting Up
-- Apogee
-- Descending
-- Descending under Drouge Chute
-- Descending under Main Chute
-- Landed
-
-
 ```mermaid
 stateDiagram-v2
     [*] --> PreLaunch
