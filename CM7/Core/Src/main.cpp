@@ -55,8 +55,6 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-/* USER CODE BEGIN PV */
-
 I2C_HandleTypeDef hi2c1;
 
 QSPI_HandleTypeDef hqspi;
@@ -68,6 +66,8 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart4;
 
 PCD_HandleTypeDef hpcd_USB_OTG_HS;
+
+/* USER CODE BEGIN PV */
 
 Data data;
 
@@ -121,8 +121,8 @@ int main(void)
 	/* USER CODE BEGIN Boot_Mode_Sequence_1 */
 	/* Wait until CPU2 boots and enters in stop mode or timeout*/
 	timeout = 0xFFFF;
-	while ((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) != RESET) && (timeout-- > 0));
-	if (timeout < 0)
+	while((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) != RESET) && (timeout-- > 0));
+	if ( timeout < 0 )
 	{
 		Error_Handler();
 	}
@@ -146,11 +146,11 @@ int main(void)
 	/*Take HSEM */
 	HAL_HSEM_FastTake(HSEM_ID_0);
 	/*Release HSEM in order to notify the CPU2(CM4)*/
-	HAL_HSEM_Release(HSEM_ID_0, 0);
+	HAL_HSEM_Release(HSEM_ID_0,0);
 	/* wait until CPU2 wakes up from stop mode */
 	timeout = 0xFFFF;
-	while ((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) == RESET) && (timeout-- > 0));
-	if (timeout < 0)
+	while((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) == RESET) && (timeout-- > 0));
+	if ( timeout < 0 )
 	{
 		Error_Handler();
 	}
@@ -218,21 +218,21 @@ void SystemClock_Config(void)
 	 */
 	__HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
 
-	while (!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY))
-	{
-	}
+	while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
 
 	/** Initializes the RCC Oscillators according to the specified parameters
 	 * in the RCC_OscInitTypeDef structure.
 	 */
-	RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_HSI;
-	RCC_OscInitStruct.HSIState = RCC_HSI_DIV1;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_HSI
+                              |RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSIState = RCC_HSI_DIV1;
 	RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
 	RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-	RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+	RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
 	RCC_OscInitStruct.PLL.PLLM = 4;
-	RCC_OscInitStruct.PLL.PLLN = 10;
+	RCC_OscInitStruct.PLL.PLLN = 13;
 	RCC_OscInitStruct.PLL.PLLP = 2;
 	RCC_OscInitStruct.PLL.PLLQ = 2;
 	RCC_OscInitStruct.PLL.PLLR = 2;
@@ -406,6 +406,7 @@ static void MX_SPI1_Init(void)
   /* USER CODE BEGIN SPI1_Init 2 */
 
   /* USER CODE END SPI1_Init 2 */
+
   }
 
 /**
@@ -458,6 +459,7 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 2 */
   HAL_TIM_MspPostInit(&htim3);
+
 }
 
 /**
@@ -613,7 +615,7 @@ void Error_Handler(void)
 	/* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef USE_FULL_ASSERT
+#ifdef  USE_FULL_ASSERT
 /**
  * @brief  Reports the name of the source file and the source line number
  *         where the assert_param error has occurred.
