@@ -59,10 +59,16 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define SERVO1_Pin GPIO_PIN_0
-#define SERVO1_GPIO_Port GPIOB
-#define SERVO2_Pin GPIO_PIN_1
-#define SERVO2_GPIO_Port GPIOB
+#define SERVO1_Pin GPIO_PIN_1
+#define SERVO1_GPIO_Port GPIOA
+#define SERVO2_Pin GPIO_PIN_2
+#define SERVO2_GPIO_Port GPIOA
+#define SERVO3_Pin GPIO_PIN_3
+#define SERVO3_GPIO_Port GPIOA
+#define SERVO4_Pin GPIO_PIN_0
+#define SERVO4_GPIO_Port GPIOB
+#define SERVO5_Pin GPIO_PIN_1
+#define SERVO5_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
