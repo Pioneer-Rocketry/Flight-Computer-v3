@@ -1,5 +1,5 @@
-#ifndef FLASH_H
-#define FLASH_H
+#ifndef FLASH_W25Q128_H
+#define FLASH_W25Q128_H
 
 #include "stm32h7xx_hal.h"
 
@@ -70,10 +70,10 @@
 #define W25QXX_SET_BURST_WRAP           0x77
 
 /**
- * Flash storage class
+ * Flash_W25Q128 storage class
  */
-class Flash {
+class Flash_W25Q128 {
 };
 
 
-#endif /* FLASH_H */
+#endif /* FLASH_W25Q128_H */
