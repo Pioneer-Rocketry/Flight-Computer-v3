@@ -3,6 +3,8 @@
 
 #include "stm32h7xx_hal.h"
 
+#include "data.h"
+
 // Defines
 
 #define FLASH_PAGE_SIZE 256
@@ -73,6 +75,19 @@
  * Flash_W25Q128 storage class
  */
 class Flash_W25Q128 {
+private:
+    Data *data;
+
+    QSPI_HandleTypeDef *qspi;
+
+    void read();
+    void write();
+
+public:
+    bool begin();
+    void write_data();
+
+    Flash_W25Q128(QSPI_HandleTypeDef *qspi, Data *data);
 };
 
 

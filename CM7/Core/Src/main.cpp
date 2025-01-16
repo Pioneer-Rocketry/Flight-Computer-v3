@@ -22,8 +22,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "data.h"
 #include "state_machine.h"
+#include "flash_W25Q128.h"
+#include "data.h"
 
 // Sensors
 
@@ -73,7 +74,8 @@ PCD_HandleTypeDef hpcd_USB_OTG_HS;
 
 Data data;
 
-// Data data;
+Flash_W25Q128 flash_w25q128(&hqspi, &data);
+
 State_Machine state_machine(&data);
 
 // Define sensors
@@ -175,6 +177,11 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM3_Init();
 	/* USER CODE BEGIN 2 */
+
+  // Initialize storage
+  if (!flash_w25q128.begin()) {
+    while (1);
+  }
 
 	// Initialize sensors
 	if (!accel_h3lis100.begin()) {
