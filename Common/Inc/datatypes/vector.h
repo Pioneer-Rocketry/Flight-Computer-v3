@@ -8,41 +8,41 @@
  * A 3D vector
  */
 class Vector {
-    private:
-        double x;
-        double y;
-        double z;
+private:
+    double x;
+    double y;
+    double z;
 
-    public:
-        Vector();
+public:
+    Vector();
 
-        /**
-         * Construct a new Vector object
-         *
-         * @param x The x component of the vector
-         * @param y The y component of the vector
-         * @param z The z component of the vector
-         */
-        Vector(double x, double y, double z);
+    /**
+     * Construct a new Vector object
+     *
+     * @param x The x component of the vector
+     * @param y The y component of the vector
+     * @param z The z component of the vector
+     */
+    Vector(double x, double y, double z);
 
-        double getX();
-        double getY();
-        double getZ();
+    double getX();
+    double getY();
+    double getZ();
 
-        void setX(double x);
-        void setY(double y);
-        void setZ(double z);
+    void setX(double x);
+    void setY(double y);
+    void setZ(double z);
 
-        void zero();
+    void zero();
 
-        Vector operator+(Vector v);
-        Vector operator-(Vector v);
-        Vector operator*(double scalar);
-        Vector operator/(double scalar);
+    Vector operator+(Vector v);
+    Vector operator-(Vector v);
+    Vector operator*(double scalar);
+    Vector operator/(double scalar);
 
-        double dot(Vector v);
-        Vector normalize();
-        double magnitude();
+    double dot(Vector v);
+    Vector normalize();
+    double magnitude();
 };
 
 #endif

@@ -15,13 +15,13 @@
 #define MS5607_PROM_READ 0xA6
 
 class Baro_MS5607 : public Sensor {
-    private:
+private:
 
-    public:
-        Baro_MS5607(I2C_HandleTypeDef *i2cHandler, Data *data);
+public:
+    Baro_MS5607(I2C_HandleTypeDef *i2cHandler, Data *data);
 
-        bool begin() override;
-        void get_data() override;
+    bool begin() override;
+    void get_data() override;
 };
 
 #endif

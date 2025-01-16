@@ -39,13 +39,13 @@
 #define I3G4250_INT1_DURATION   0x38
 
 class Gyro_I3G4250 : public Sensor {
-    private:
+private:
 
-    public:
-        Gyro_I3G4250(I2C_HandleTypeDef *i2cHandler, Data *data);
+public:
+    Gyro_I3G4250(I2C_HandleTypeDef *i2cHandler, Data *data);
 
-        bool begin() override;
-        void get_data() override;
+    bool begin() override;
+    void get_data() override;
 };
 
 #endif

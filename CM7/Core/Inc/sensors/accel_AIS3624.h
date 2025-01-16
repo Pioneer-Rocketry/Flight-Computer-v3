@@ -33,13 +33,13 @@
 #define AIS3624_INT2_DURATION      0x37
 
 class Accel_AIS3624 : public Sensor {
-    private:
+private:
 
-    public:
-        Accel_AIS3624(I2C_HandleTypeDef *i2cHandler, Data *data);
+public:
+    Accel_AIS3624(I2C_HandleTypeDef *i2cHandler, Data *data);
 
-        bool begin() override;
-        void get_data() override;
+    bool begin() override;
+    void get_data() override;
 };
 
 #endif

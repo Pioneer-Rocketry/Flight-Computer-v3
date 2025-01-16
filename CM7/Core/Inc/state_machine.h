@@ -19,32 +19,32 @@ enum State {
 };
 
 class State_Machine {
-    private:
-        State state = INITIALIZING;
+private:
+    State state = INITIALIZING;
 
-        uint8_t stages;
-        uint8_t stagesRemaining;
+    uint8_t stages;
+    uint8_t stagesRemaining;
 
-        Data *data;
+    Data *data;
 
-        // State Switch Conditions
-        void switch_to_system_checks();
-        void switch_to_localizing();
-        void switch_to_ready_for_flight();
-        void switch_to_accelerating();
-        void switch_to_ascending();
-        void switch_to_descending();
-        void switch_to_under_drouge();
-        void switch_to_under_main();
-        void switch_to_landed();
+    // State Switch Conditions
+    void switch_to_system_checks();
+    void switch_to_localizing();
+    void switch_to_ready_for_flight();
+    void switch_to_accelerating();
+    void switch_to_ascending();
+    void switch_to_descending();
+    void switch_to_under_drouge();
+    void switch_to_under_main();
+    void switch_to_landed();
 
-    public:
-        State_Machine(Data *data);
+public:
+    State_Machine(Data *data);
 
-        State update();
-        State get_state();
+    State update();
+    State get_state();
 
-        void reset();
+    void reset();
 };
 
 #endif
