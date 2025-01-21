@@ -1,6 +1,6 @@
 name: Build
 
-on: workflow_dispatch
+on: [ push, pull_request, workflow_dispatch ]
 
 jobs:
   build_CM4:
@@ -18,3 +18,9 @@ jobs:
       - name: Build
         run: |
           make -C Makefile/CM4
+
+      - name: Save Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: CM4 Build
+          path: Makefile/CM4/build/Flight-Computer_CM4.elf
