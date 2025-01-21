@@ -1,6 +1,8 @@
 #ifndef QUATERNION_H
 #define QUATERNION_H
 
+#include <math.h>
+
 /**
  * A Quaternion
  */
@@ -32,7 +34,9 @@ public:
     void setX(float x);
     void setY(float y);
     void setZ(float z);
-    void setW(float w);   
+    void setW(float w);
+
+    void normalize();
 };
 
 #endif /* QUATERNION_H */
