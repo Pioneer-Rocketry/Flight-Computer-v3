@@ -16,4 +16,5 @@ jobs:
         run: docker buildx build .devcontainer/ -t build_container
 
       - name: Build CM4
-        run: sudo docker run -it -v $GITHUB_WORKSPACE:/srv -w /srv build_container make -C Makefile/CM4
+        run: docker run -v $GITHUB_WORKSPACE:/srv -w /srv build_container make -C Makefile/CM4
+
