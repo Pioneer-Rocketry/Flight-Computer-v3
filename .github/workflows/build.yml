@@ -5,3 +5,16 @@ on: workflow_dispatch
 jobs:
   build_CM4:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/pioneer-rocketry/flight-computer-v3:main
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          make -C Makefile/CM4
