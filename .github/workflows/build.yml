@@ -1,17 +1,7 @@
 name: Build
 
-on: [push,]
+on: [push, pull_request]
 
 jobs:
   build_CM4:
     runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      - name: Build docker image and Build CM4 Code
-        run: docker buildx build .devcontainer/ -t build_container && docker run -v $GITHUB_WORKSPACE:/srv -w /srv build_container make -C Makefile/CM4
-
