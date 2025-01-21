@@ -6,10 +6,10 @@
  */
 class Quaternion {
 private:
-    double x;
-    double y;
-    double z;
-    double w;
+    float x;
+    float y;
+    float z;
+    float w;
 
 public:
     Quaternion();
@@ -22,17 +22,17 @@ public:
      * @param z The z component of the quaternion
      * @param w The w component of the quaternion
      */
-    Quaternion(double x, double y, double z, double w); 
+    Quaternion(float x, float y, float z, float w); 
 
-    double getX();
-    double getY();
-    double getZ();
-    double getW();
+    float getX();
+    float getY();
+    float getZ();
+    float getW();
 
-    void setX(double x);
-    void setY(double y);
-    void setZ(double z);
-    void setW(double w);   
+    void setX(float x);
+    void setY(float y);
+    void setZ(float z);
+    void setW(float w);   
 };
 
 #endif /* QUATERNION_H */

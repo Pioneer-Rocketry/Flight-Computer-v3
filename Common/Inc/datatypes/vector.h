@@ -9,9 +9,9 @@
  */
 class Vector {
 private:
-    double x;
-    double y;
-    double z;
+    float x;
+    float y;
+    float z;
 
 public:
     Vector();
@@ -23,26 +23,26 @@ public:
      * @param y The y component of the vector
      * @param z The z component of the vector
      */
-    Vector(double x, double y, double z);
+    Vector(float x, float y, float z);
 
-    double getX();
-    double getY();
-    double getZ();
+    float getX();
+    float getY();
+    float getZ();
 
-    void setX(double x);
-    void setY(double y);
-    void setZ(double z);
+    void setX(float x);
+    void setY(float y);
+    void setZ(float z);
 
     void zero();
 
     Vector operator+(Vector v);
     Vector operator-(Vector v);
-    Vector operator*(double scalar);
-    Vector operator/(double scalar);
+    Vector operator*(float scalar);
+    Vector operator/(float scalar);
 
-    double dot(Vector v);
+    float dot(Vector v);
     Vector normalize();
-    double magnitude();
+    float magnitude();
 };
 
 #endif
