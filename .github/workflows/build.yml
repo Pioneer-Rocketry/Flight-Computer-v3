@@ -9,6 +9,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
       - name: Build docker images
-        run: docker build -t local < .devcontainer/Dockerfile
+        run: docker buildx build .devcontainer/
       - name: Run tests
         run: docker run -it -v $PWD:/srv -w/srv local make -C Makefile/CM4
