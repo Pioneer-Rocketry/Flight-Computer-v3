@@ -106,9 +106,27 @@ Position Estimation uses an Async Kalman Filter. \
 Then taking accelerometer reading from both IMU, and rotates them based on the Attitude from the AHRS system.
 The Kalman Filter finds the best estimation of the position using the accelerometer readings, and GPS readings.
 
-##### New Idea
+#### New Idea
 
 I think we can get away with using a basic Complementary Filter while on the ground, but once we launch we switch to just intergrating angular velocity.\
 But we need a accurate measurement of the Gyro Bias, and Gyro Drift 
 
 Then you can rotate the accelerometer readings by the attitude, and integrate them to get the position (up until apogee).
+
+#### Integration quaternion
+To integration a quaternion with euler angular velocities you can [use this](https://stackoverflow.com/a/24201879)
+
+```cpp
+Quaternion deltaRotation(Vector3& angVel, double deltaTime)
+{
+   Vector3 ha = angVel * (deltaTime * 0.5); // vector of half angle
+   double l = ha.norm(); // magnitude
+   if (l > 0) {
+      ha *= sin(l) / l;
+   }
+   return Quaternion(cos(l), ha.x(), ha.y(), ha.z());
+}
+
+orientation *= deltaRotation;
+orientation.normalize();
+```
