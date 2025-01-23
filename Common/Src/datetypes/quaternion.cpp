@@ -14,6 +14,10 @@ Quaternion::Quaternion(float x, float y, float z, float w) {
     this->w = w;
 }
 
+Quaternion::Quaternion(Vector euler) {
+    this->fromEuler(euler);
+}
+
 float Quaternion::getX() { return this->x; }
 float Quaternion::getY() { return this->y; }
 float Quaternion::getZ() { return this->z; }
@@ -31,7 +35,6 @@ void Quaternion::normalize() {
     this->z /= length;
     this->w /= length;
 }
-
 
 /**
  * Multiply this quaternion by another
@@ -58,4 +61,54 @@ Quaternion Quaternion::operator*(Quaternion q) {
  */
 Quaternion Quaternion::operator*=(Quaternion q) {
     return *this = *this * q;
+}
+
+/**
+ * Convert a quaternion to an euler angle
+ * 
+ * @return The euler angle
+ */
+Vector Quaternion::toEuler() {
+    /*
+     * Roll is around the Z axis
+     * Pitch is around the X axis
+     * Yaw is around the Y axis
+     * 
+     * https://math.stackexchange.com/q/2975109
+     */
+
+    float roll = atan2( 2 * (this->w * this->x + this->y * this->z), 
+                        1 - 2 * (this->x * this->x + this->y * this->y));
+    roll *= 180 / M_PI;
+
+    float pitch = 2 * (this->w * this->y - this->z * this->x);
+    if (pitch > 1) pitch = 1;
+    else if (pitch < -1) pitch = -1;
+    pitch = asin(pitch);
+    pitch *= 180 / M_PI;
+
+    float yaw = atan2(  2 * (this->w * this->z + this->x * this->y), 
+                        1 - 2 * (this->y * this->y + this->z * this->z));
+    yaw *= 180 / M_PI;
+
+    return Vector(pitch, yaw, roll);
+}
+
+/**
+ * Convert an euler angle to a quaternion
+ * 
+ * @param euler The euler angle
+ */
+void Quaternion::fromEuler(Vector euler) {
+    /*
+     * Roll is around the Z axis
+     * Pitch is around the X axis
+     * Yaw is around the Y axis
+     * 
+     * https://math.stackexchange.com/q/2975109
+     */
+    this->x = sin(euler.getZ() / 2) * cos(euler.getX() / 2) * cos(euler.getY() / 2) - cos(euler.getZ() / 2) * sin(euler.getX() / 2) * sin(euler.getY() / 2);
+    this->y = cos(euler.getZ() / 2) * sin(euler.getX() / 2) * cos(euler.getY() / 2) + sin(euler.getZ() / 2) * cos(euler.getX() / 2) * sin(euler.getY() / 2);
+    this->z = cos(euler.getZ() / 2) * cos(euler.getX() / 2) * sin(euler.getY() / 2) - sin(euler.getZ() / 2) * sin(euler.getX() / 2) * cos(euler.getY() / 2);
+    this->w = cos(euler.getZ() / 2) * cos(euler.getX() / 2) * cos(euler.getY() / 2) + sin(euler.getZ() / 2) * sin(euler.getX() / 2) * sin(euler.getY() / 2);
 }

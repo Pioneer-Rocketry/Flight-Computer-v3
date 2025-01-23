@@ -3,6 +3,8 @@
 
 #include <math.h>
 
+#include "datatypes/vector.h"
+
 /**
  * A Quaternion
  */
@@ -25,6 +27,7 @@ public:
      * @param w The w component of the quaternion
      */
     Quaternion(float x, float y, float z, float w); 
+    Quaternion(Vector euler);
 
     float getX();
     float getY();
@@ -37,9 +40,12 @@ public:
     void setW(float w);
 
     void normalize();
-    
+
     Quaternion operator*(Quaternion q);
     Quaternion operator*=(Quaternion q);
+
+    Vector toEuler();
+    void fromEuler(Vector euler);
 };
 
 #endif /* QUATERNION_H */
