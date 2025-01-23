@@ -120,13 +120,13 @@ To integration a quaternion with euler angular velocities you can [use this](htt
 Quaternion deltaRotation(Vector3& angVel, double deltaTime)
 {
    Vector3 ha = angVel * (deltaTime * 0.5); // vector of half angle
-   double l = ha.norm(); // magnitude
+   double l = ha.normalize(); // magnitude
    if (l > 0) {
       ha *= sin(l) / l;
    }
    return Quaternion(cos(l), ha.x(), ha.y(), ha.z());
 }
 
-orientation *= deltaRotation;
+orientation *= deltaRotation(anglularVelocity, deltaTime);
 orientation.normalize();
 ```
