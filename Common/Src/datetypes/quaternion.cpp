@@ -31,3 +31,31 @@ void Quaternion::normalize() {
     this->z /= length;
     this->w /= length;
 }
+
+
+/**
+ * Multiply this quaternion by another
+ * 
+ * @param q The quaternion to multiply by
+ * 
+ * @return The result of the multiplication
+ */
+Quaternion Quaternion::operator*(Quaternion q) {
+    Quaternion result;
+    result.w = this->w * q.w - this->x * q.x - this->y * q.y - this->z * q.z;
+    result.x = this->w * q.x + this->x * q.w + this->y * q.z - this->z * q.y;
+    result.y = this->w * q.y - this->x * q.z + this->y * q.w + this->z * q.x;
+    result.z = this->w * q.z + this->x * q.y - this->y * q.x + this->z * q.w;
+    return result;
+}
+
+/**
+ * Multiply this quaternion by another
+ * 
+ * @param q The quaternion to multiply by
+ * 
+ * @return The result of the multiplication
+ */
+Quaternion Quaternion::operator*=(Quaternion q) {
+    return *this = *this * q;
+}

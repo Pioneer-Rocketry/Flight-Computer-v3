@@ -37,6 +37,9 @@ public:
     void setW(float w);
 
     void normalize();
+    
+    Quaternion operator*(Quaternion q);
+    Quaternion operator*=(Quaternion q);
 };
 
 #endif /* QUATERNION_H */
