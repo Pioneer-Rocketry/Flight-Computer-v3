@@ -239,6 +239,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UHADMXES
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for FlightComputer\Design Rule Check - PCB1.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
