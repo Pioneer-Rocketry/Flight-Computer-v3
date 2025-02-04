@@ -281,14 +281,66 @@ DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for FlightComputer\DRC\PCB1.html
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.G1
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for FlightComputer\NC Drill\PCB1.LDP
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.G2
 DItemRevisionGUID=
 
 [GeneratedDocument9]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GM
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for FlightComputer\DRC\PCB1.html
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for FlightComputer\NC Drill\PCB1.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument22]
 DocumentPath=Project Outputs for FlightComputer\Gerber\PCB1.REP
 DItemRevisionGUID=
 
