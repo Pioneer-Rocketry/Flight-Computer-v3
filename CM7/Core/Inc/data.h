@@ -19,7 +19,8 @@ public:
 
     Vector MMC5603_Mag; // MMC5603 Magnetometer in uT
 
-    Vector MS560702BA03_Pressure; // MS560702BA03 Pressure in hPa
+    float MS560702BA03_Pressure; // MS560702BA03 Pressure in hPa
+    float MS560702BA03_Altitude; // MS560702BA03 altitude in m using https://www.weather.gov/media/epz/wxcalc/pressureAltitude.pdf to convert
 };
 
 #endif
