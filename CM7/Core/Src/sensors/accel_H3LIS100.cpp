@@ -40,17 +40,14 @@ bool Accel_H3LIS100::begin() {
 }
 
 void Accel_H3LIS100::get_data() {
-
     uint8_t data[3];
 
     read_I2C(H3LIS100_OUT_X, &data[0]);
     read_I2C(H3LIS100_OUT_Y, &data[1]);
     read_I2C(H3LIS100_OUT_Z, &data[2]);
 
-    // TODO: Convert to 2 complement
-
-    this->data->H2LIS100_Accel.setX(data[0]);
-    this->data->H2LIS100_Accel.setY(data[1]);
-    this->data->H2LIS100_Accel.setZ(data[2]);
-
+    // Sensor Reading * Sensitivity to get m/s^2
+    this->data->H3LIS100_Accel.setX((float)((int8_t) data[0]) * H3LIS100_SENSITIVITY);
+    this->data->H3LIS100_Accel.setY((float)((int8_t) data[1]) * H3LIS100_SENSITIVITY);
+    this->data->H3LIS100_Accel.setZ((float)((int8_t) data[2]) * H3LIS100_SENSITIVITY);
 }

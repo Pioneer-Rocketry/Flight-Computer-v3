@@ -12,7 +12,7 @@ public:
     void log();
 
     // Raw sensor readings
-    Vector H2LIS100_Accel; // H2LIS100 Accelerometer in m/s^2
+    Vector H3LIS100_Accel; // H2LIS100 Accelerometer in m/s^2
     Vector AIS2624_Accel;  // AIS2624 Accelerometer in m/s^2
 
     Vector I3G4250_Gyro; // I3G4250 Gyroscope in degrees/s
