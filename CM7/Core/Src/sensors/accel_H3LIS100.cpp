@@ -35,6 +35,8 @@ bool Accel_H3LIS100::begin() {
     uint8_t ctrlReg3 = 0b00010000;
     write_I2C(H3LIS100_CTRL_REG3, &ctrlReg3);
 
+    // TODO : Finish Configuration like interrupts, and other stuff
+
 }
 
 void Accel_H3LIS100::get_data() {
