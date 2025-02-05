@@ -9,9 +9,5 @@ bool Baro_MS5607::begin() {
 }
 
 void Baro_MS5607::get_data() {
-    /*
-        This device does not work like a normal I2C device where you can just request the contents of a register.
-        Instead, you need to send a command and then read the data back.
-    */
 
 }
