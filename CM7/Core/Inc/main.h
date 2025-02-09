@@ -69,6 +69,10 @@ void Error_Handler(void);
 #define SERVO4_GPIO_Port GPIOB
 #define SERVO5_Pin GPIO_PIN_1
 #define SERVO5_GPIO_Port GPIOB
+#define SERVO6_Pin GPIO_PIN_9
+#define SERVO6_GPIO_Port GPIOE
+#define BUZZER_Pin GPIO_PIN_12
+#define BUZZER_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
 
