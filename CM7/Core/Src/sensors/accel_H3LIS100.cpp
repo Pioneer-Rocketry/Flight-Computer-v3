@@ -16,11 +16,11 @@ bool Accel_H3LIS100::begin() {
 
     // CTRL_REG1
     uint8_t ctrlReg1 = 0;
-    ctrlReg1 |= 0b001 << 5; // 001 : Normal mode
-    ctrlReg1 |=  0b01 << 3; // 01 : 100 Hz
-    ctrlReg1 |=   0b1 << 2; // 1 : Enable Z Axis
-    ctrlReg1 |=   0b1 << 1; // 1 : Enable Y Axis
-    ctrlReg1 |=   0b1 << 0; // 1 : Enable X Axis
+    ctrlReg1 |= 0b001 << 5; // Normal mode
+    ctrlReg1 |=  0b01 << 3; // 100 Hz
+    ctrlReg1 |=   0b1 << 2; // Enable Z Axis
+    ctrlReg1 |=   0b1 << 1; // Enable Y Axis
+    ctrlReg1 |=   0b1 << 0; // Enable X Axis
     write_I2C(H3LIS100_CTRL_REG1, &ctrlReg1);
 
     // CTRL_REG2
@@ -32,12 +32,12 @@ bool Accel_H3LIS100::begin() {
 
     // CTRL_REG3
     uint8_t ctrlReg3 = 0;
-    ctrlReg3 |=   0b0 << 6; // 0 : Active High
-    ctrlReg3 |=   0b0 << 5; // 0 : Open Drain
-    ctrlReg3 |=   0b0 << 4; // 0 : Default Value
-    ctrlReg3 |=  0b10 << 2; // 10 : Data Ready Interrupt
-    ctrlReg3 |=   0b0 << 1; // 0 : Default Value
-    ctrlReg3 |=   0b0 << 0; // 00 : Filter settings that arent used
+    ctrlReg3 |=   0b0 << 6; // Active High
+    ctrlReg3 |=   0b0 << 5; // Open Drain
+    ctrlReg3 |=   0b0 << 4; // Default Value
+    ctrlReg3 |=  0b10 << 2; // Data Ready Interrupt
+    ctrlReg3 |=   0b0 << 1; // Default Value
+    ctrlReg3 |=   0b0 << 0; // Filter settings that arent used
     write_I2C(H3LIS100_CTRL_REG3, &ctrlReg3);
 
     // Skipped CTRL_REG4 b/c its related to SPI

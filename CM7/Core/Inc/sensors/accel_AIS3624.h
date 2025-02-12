@@ -32,6 +32,8 @@
 #define AIS3624_INT2_THS           0x36
 #define AIS3624_INT2_DURATION      0x37
 
+#define AIS3624_SENSITIVITY 0.0117f
+
 class Accel_AIS3624 : public Sensor {
 private:
 

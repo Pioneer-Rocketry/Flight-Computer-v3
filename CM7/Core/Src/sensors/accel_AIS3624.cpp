@@ -15,58 +15,55 @@ bool Accel_AIS3624::begin() {
     // Configuration
 
     // CTRL_REG1
-    // 001 : Normal Power Mode
-    // 01 : 100 Hz
-    // 111 : XYZ Axis Enable
-    uint8_t ctrlReg1 = 0b00101111;
+    uint8_t ctrlReg1 = 0;
+    ctrlReg1 |= 0b001 << 5; // Normal mode
+    ctrlReg1 |=  0b01 << 3; // 100 Hz
+    ctrlReg1 |=   0b1 << 2; // Enable Z Axis
+    ctrlReg1 |=   0b1 << 1; // Enable Y Axis
+    ctrlReg1 |=   0b1 << 0; // Enable X Axis
     write_I2C(AIS3624_CTRL_REG1, &ctrlReg1);
 
     // CTRL_REG2
-    // 0 : Normal mode
-    // 00: No filter
-    // 0 : Filter bypass
-    // 0000 : Pertain to high pass filter
-    uint8_t ctrlReg2 = 0b00000000;
+    uint8_t ctrlReg2 = 0;
+    ctrlReg2 |=     0b0 << 7; // Normal Mode
+    ctrlReg2 |=    0b00 << 5; // Normal Mode / No Filter
+    ctrlReg2 |= 0b00000 << 0; // Dont Care cause were not using the filter
     write_I2C(AIS3624_CTRL_REG2, &ctrlReg2);
 
     // CTRL_REG3
-    // 0 : Interrupt active high
-    // 0 : Push / pull
-    // 0 : INT 2 Not latched
-    // 10 : INT 2 Data ready
-    // 0 : INT 1 Not latched
-    // 10 : INT 1 Data ready
     uint8_t ctrlReg3 = 0b00000000;
+    ctrlReg3 |=  0b0 << 7; // Interrupt active high
+    ctrlReg3 |=  0b0 << 6; // Push / Pull
+    ctrlReg3 |=  0b0 << 5; // INT 2 Not latched
+    ctrlReg3 |= 0b10 << 3; // INT 2 Data ready
+    ctrlReg3 |=  0b0 << 2; // INT 1 Not latched
+    ctrlReg3 |= 0b10 << 0; // INT 1 Data ready
     write_I2C(AIS3624_CTRL_REG3, &ctrlReg3);
 
     // CTRL_REG4
-    // 0 : Continuous update
-    // 0 : Least significant bit
-    // 01 : Range selection (-12g, +12g)
-    // 0 : Self-test plus
-    // 0 : Self-test disabled
-    // 0 : 4-wire SPI interface
     uint8_t ctrlReg4 = 0b00010000;
+    ctrlReg4 |=  0b0 << 7; // Continuous update
+    ctrlReg4 |=  0b0 << 6; // Little Endian
+    ctrlReg4 |= 0b11 << 4; // Range selection (-24g, +24g)
+    ctrlReg4 |=  0b0 << 3; // Self-test plus
+    ctrlReg4 |=  0b0 << 2; // Self-test disabled
+    ctrlReg4 |=  0b0 << 1; // 4-wire SPI interface
     write_I2C(AIS3624_CTRL_REG4, &ctrlReg4);
 
     // CTRL_REG5
-    // 000000 : Zeroed out
-    // 00 : Sleep-to-wake disabled
     uint8_t ctrlReg5 = 0b00000000;
+    ctrlReg5 |= 0b00 << 0; // Sleep-to-wake disabled
     write_I2C(AIS3624_CTRL_REG5, &ctrlReg5);
 }
 
 void Accel_AIS3624::get_data() {
+    uint8_t data[6];
 
-    uint8_t data[3];
+    read_I2C(AIS3624_OUT_X, &data[0], 2);
+    read_I2C(AIS3624_OUT_Y, &data[2], 2);
+    read_I2C(AIS3624_OUT_Z, &data[4], 2);
 
-    read_I2C(AIS3624_OUT_X, &data[0]);
-    read_I2C(AIS3624_OUT_Y, &data[1]);
-    read_I2C(AIS3624_OUT_Z, &data[2]);
-
-    // TODO: Two's compliment
-
-    this->data->AIS2624_Accel.setX(data[0]);
-    this->data->AIS2624_Accel.setY(data[1]);
-    this->data->AIS2624_Accel.setZ(data[2]);
+    this->data->AIS2624_Accel.setX(((float) (int16_t) (data[0] | data[1] << 8)) * AIS3624_SENSITIVITY);
+    this->data->AIS2624_Accel.setY(((float) (int16_t) (data[2] | data[3] << 8)) * AIS3624_SENSITIVITY);
+    this->data->AIS2624_Accel.setZ(((float) (int16_t) (data[4] | data[5] << 8)) * AIS3624_SENSITIVITY);
 }
