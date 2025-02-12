@@ -33,7 +33,7 @@
 #define H3LIS100_INT2_DURATION      0x37
 
 // Sensors sensitivity in G/LSB (LSB is least significant bit)
-#define H3LIS100_SENSITIVITY 200.0f/256.0f
+#define H3LIS100_SENSITIVITY .780f
 
 class Accel_H3LIS100 : public Sensor {
 private:
